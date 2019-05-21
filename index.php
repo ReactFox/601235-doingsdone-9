@@ -50,6 +50,20 @@ $tasks = [
         'done' => 0
     ]
 ];
+
+// Функция для получения кол-ва задач в категории проекты
+function get_count_task($tasks, $projects)
+{
+    $count_category = 0;
+    foreach ($tasks as $value) {
+        if ($value['category'] === $projects) {
+            $count_category++;
+
+        };
+    }
+//    return $value["category"]. ' <==>' .$projects;
+    return $count_category;
+}
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -103,7 +117,7 @@ $tasks = [
                         <?php foreach ($projects as $project): ?>
                             <li class="main-navigation__list-item">
                                 <a class="main-navigation__list-item-link" href="#"><?= $project ?></a>
-                                <span class="main-navigation__list-item-count">0</span>
+                                <span class="main-navigation__list-item-count"><?= get_count_task($tasks, $project) ?></span>
                             </li>
                         <?php endforeach; ?>
                     </ul>
