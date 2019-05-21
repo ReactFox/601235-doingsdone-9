@@ -16,46 +16,47 @@ $tasks = [
     [
         'task' => 'Собеседование в IT компании',
         'date_of_completion' => '01.12.2018',
-        'category' => $projects[2],
+        'category' => "Работа",
         'done' => 0
     ],
     [
         'task' => 'Выполнить тестовое задание',
         'date_of_completion' => '25.12.2018',
-        'category' => $projects[2],
+        'category' => "Работа",
         'done' => 0
     ],
     [
         'task' => 'Сделать задание первого раздела',
         'date_of_completion' => '21.12.2018',
-        'category' => $projects[1],
+        'category' => "Учеба",
         'done' => 1
     ],
     [
         'task' => 'Встреча с другом',
         'date_of_completion' => '22.12.2018',
-        'category' => $projects[0],
+        'category' => "Входящие",
         'done' => 0
     ],
     [
         'task' => 'Купить корм для кота',
         'date_of_completion' => 0,
-        'category' => $projects[3],
+        'category' => "Домашние дела",
         'done' => 0
     ],
     [
         'task' => 'Заказать пиццу',
         'date_of_completion' => 0,
-        'category' => $projects[3],
+        'category' => "Домашние дела",
         'done' => 0
     ]
 ];
 
 // Функция для получения кол-ва задач в категории проекты
-function get_count_task ($tasks, $projects) {
+function get_count_task($tasks, $projects)
+{
     $count_category = 0;
-    foreach ($tasks as $value){
-        if($value['category'] === $projects) {
+    foreach ($tasks as $value) {
+        if ($value['category'] === $projects) {
             $count_category++;
         };
     }
