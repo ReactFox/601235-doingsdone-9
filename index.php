@@ -16,37 +16,37 @@ $tasks = [
     [
         'task' => 'Собеседование в IT компании',
         'date_of_completion' => '01.12.2018',
-        'category' => "Работа",
+        'category' => $projects[2],
         'done' => 0
     ],
     [
         'task' => 'Выполнить тестовое задание',
         'date_of_completion' => '25.12.2018',
-        'category' => "Работа",
+        'category' => $projects[2],
         'done' => 0
     ],
     [
         'task' => 'Сделать задание первого раздела',
         'date_of_completion' => '21.12.2018',
-        'category' => "Учеба",
+        'category' => $projects[1],
         'done' => 1
     ],
     [
         'task' => 'Встреча с другом',
         'date_of_completion' => '22.12.2018',
-        'category' => "Входящие",
+        'category' => $projects[0],
         'done' => 0
     ],
     [
         'task' => 'Купить корм для кота',
         'date_of_completion' => 0,
-        'category' => "Домашние дела",
+        'category' => $projects[3],
         'done' => 0
     ],
     [
         'task' => 'Заказать пиццу',
         'date_of_completion' => 0,
-        'category' => "Домашние дела",
+        'category' => $projects[3],
         'done' => 0
     ]
 ];
@@ -58,8 +58,10 @@ function get_count_task($tasks, $projects)
     foreach ($tasks as $value) {
         if ($value['category'] === $projects) {
             $count_category++;
+
         };
     }
+//    return $value["category"]. ' <==>' .$projects;
     return $count_category;
 }
 ?>
@@ -115,7 +117,7 @@ function get_count_task($tasks, $projects)
                         <?php foreach ($projects as $project): ?>
                             <li class="main-navigation__list-item">
                                 <a class="main-navigation__list-item-link" href="#"><?= $project ?></a>
-                                <span class="main-navigation__list-item-count"><?= get_count_task($tasks, $projects) ?></span>
+                                <span class="main-navigation__list-item-count"><?= get_count_task($tasks, $project) ?></span>
                             </li>
                         <?php endforeach; ?>
                     </ul>
