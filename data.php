@@ -1,4 +1,6 @@
 <?php
+date_default_timezone_set("Europe/Moscow");
+setlocale(LC_ALL, 'ru_RU');
 
 // показывать или нет выполненные задачи
 $show_complete_tasks = rand(0, 1);
@@ -19,7 +21,7 @@ $projects = [
 $tasks = [
     [
         'task' => 'Собеседование в IT компании',
-        'date_of_completion' => '01.12.2018',
+        'date_of_completion' => '22.05.2019',
         'category' => $projects[2],
         'done' => 0
     ],

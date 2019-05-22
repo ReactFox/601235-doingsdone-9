@@ -17,3 +17,14 @@ function get_count_task($tasks, $projects)
     }
     return $count_category;
 }
+
+function get_diff_time($task_time)
+{
+    $current_task_time = strtotime($task_time);
+    $time_midnight = strtotime("+23");
+    $date_differensce = $time_midnight - $current_task_time;
+
+    if ($date_differensce <= 86400) {
+        return 'task--important';
+    }
+}

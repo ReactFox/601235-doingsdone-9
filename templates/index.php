@@ -26,7 +26,7 @@
     <?php foreach ($tasks as $key => $value): ?>
         <!--  покажет(пока рандомно) не выполненые  задачи если show_complete_tasks==0  -->
         <?php if ($show_complete_tasks === 0 && $value['done'] === 0): ?>
-            <tr class="tasks__item task <?= ($value['done'] === 1) ? "task--completed" : "" ?>">
+            <tr class="tasks__item task <?= get_diff_time($value['date_of_completion']) ?> <?= ($value['done'] === 1) ? "task--completed" : "" ?>">
                 <td class="task__select">
                     <label class="checkbox task__checkbox">
                         <input class="checkbox__input visually-hidden task__checkbox" type="checkbox"

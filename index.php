@@ -9,6 +9,7 @@ require_once("functions.php");
 $content = include_template("index.php", [
     "tasks" => $tasks,
     "show_complete_tasks" => $show_complete_tasks,
+    "get_diff_time" => $get_diff_time
 ]);
 
 $layout = include_template("layout.php", [
