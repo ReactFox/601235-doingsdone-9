@@ -21,7 +21,7 @@ function get_count_task($tasks, $projects)
 function get_diff_time($task_time)
 {
     $current_task_time = strtotime($task_time);
-    $time_midnight = strtotime("+23");
+    $time_midnight = strtotime("tomorrow");
     $date_differensce = $time_midnight - $current_task_time;
 
     if ($date_differensce <= 86400) {
