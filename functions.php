@@ -18,6 +18,13 @@ function get_count_task($tasks, $projects)
     return $count_category;
 }
 
+/**
+ * возвращает класс для разметки CSS 'task--important' если до окончания срока выполнения задачи остаётся меншьше 24 часов
+ *
+ * @param array $task_time принимает время выполнения задачи
+ * @return string возвращает класс 'task--important'
+ */
+
 function get_diff_time($task_time)
 {
     $current_task_time = strtotime($task_time);
