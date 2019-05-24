@@ -21,7 +21,7 @@ $projects = [
 $tasks = [
     [
         'task' => 'Собеседование в IT компании',
-        'date_of_completion' => '22.05.2019',
+        'date_of_completion' => '24.05.2019',
         'category' => $projects[2],
         'done' => 0
     ],
