@@ -1,13 +1,22 @@
 USE doingsdone_db;
 
 #Добавляет список проектов
+#
+# INSERT INTO projects(project)
+# VALUES ('Входящие'),
+#        ('Учеба'),
+#        ('Работа'),
+#        ('Домашние дела'),
+#        ('Авто');
 
-INSERT INTO projects(project)
-VALUES ('Входящие'),
-       ('Учеба'),
-       ('Работа'),
-       ('Домашние дела'),
-       ('Авто');
+#Добавляет список проктов с авторами
+INSERT INTO projects(project, author_id)
+VALUES ('Входящие', 1),
+       ('Учеба', 1),
+       ('Работа', 1),
+       ('Домашние дела', 1),
+       ('Работа', 2),
+       ('Домашние дела', 2);
 
 # Добавляет пару пользователей;
 
@@ -72,26 +81,30 @@ SET `date_creation` = NOW(),
     `project_id`    = 4;
 
 
-#Добавляет список проктов каждый автор
-
-INSERT INTO projects(project, author_id)
-VALUES ('Входящие', 1),
-       ('Учеба',1),
-       ('Работа',1),
-       ('Домашние дела', 1),
-       ('Входящие', 2),
-       ('Учеба',2),
-       ('Работа',2),
-       ('Домашние дела', 2);
-
 # получает список из всех проектов для одного пользователя. Объединяет проекты с задачами,
 # чтобы посчитать количество задач в каждом проекте и в дальнейшем выводить эту цифру рядом с именем проекта;
+# Вот что получается http://joxi.ru/RmzLglWcYwZ6jA
+# Вопрос: возращается результат для каждого проекта по 4 раза
+#  Этот кусок кода закоментирую
 
-SELECT user_name
+# SELECT user_name, task, project
+# FROM users u
+#          JOIN tasks ts ON u.id = ts.author_id
+#          JOIN projects pj ON pj.author_id = ts.author_id
+# WHERE u.id = 1;
+
+
+# получает список из всех проектов для одного пользователя
+SELECT user_name, project
 FROM users u
-         JOIN  projects pj ON pj.author_id = u.id
-         JOIN tasks ts ON ts.author_id = pj.author_id ;
+         JOIN projects pj ON pj.author_id = u.id
+WHERE u.id = 1;
+
+# # считает количество задач
+# SELECT pj.id, COUNT(project)
+# FROM projects pj
+#          JOIN tasks ts ON pj.id = ts.project_id
+# GROUP BY project;
 
 
 
-# GROUP BY project
