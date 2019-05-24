@@ -92,7 +92,8 @@ SET done = 1
 WHERE id = 1;
 
 # обновляет название задачи по её идентификатору
-UPDATE tasks SET task = 'Новое название задачи'
+UPDATE tasks
+SET task = 'Новое название задачи'
 WHERE id = 4;
 
 
