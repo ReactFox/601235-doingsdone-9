@@ -78,13 +78,13 @@ SET `date_creation` = NOW(),
 SELECT *
 FROM tasks t
          JOIN projects p ON p.id = t.project_id
-WHERE t.author_id = 2;
+WHERE t.author_id = 1;
 
 
-# получает список из всех проектов для одного проекта
+# получает список из всех задач для одного проекта
 SELECT *
 FROM tasks
-WHERE project_id = 1;
+WHERE project_id = 3;
 
 # помечает задачу как выполненую
 UPDATE tasks
