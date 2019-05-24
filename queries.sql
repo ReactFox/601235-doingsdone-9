@@ -39,7 +39,7 @@ SET `date_creation`      = NOW(),
     `task`               = 'Выполнить тестовое задание',
     `date_of_completion` = '2018.12.25',
     `author_id`          = 2,
-    `project_id`         = 3;
+    `project_id`         = 5;
 
 INSERT INTO tasks
 SET `date_creation`      = NOW(),
@@ -62,7 +62,7 @@ SET `date_creation` = NOW(),
     `done`          = 0,
     `task`          = 'Купить корм для кота',
     `author_id`     = 2,
-    `project_id`    = 4;
+    `project_id`    = 6;
 
 INSERT INTO tasks
 SET `date_creation` = NOW(),
