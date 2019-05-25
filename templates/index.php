@@ -26,6 +26,7 @@
     <?php foreach ($tasks as $key => $value): ?>
         <!--  покажет(пока рандомно) не выполненые  задачи если show_complete_tasks==0  -->
         <?php if ($show_complete_tasks === 0 && $value['done'] === 0): ?>
+<!--            Функция для получения кол-ва задач в категории проекты-->
             <tr class="tasks__item task <?= get_diff_time($value['date_of_completion']) ?> <?= ($value['done'] === 1) ? "task--completed" : "" ?>">
                 <td class="task__select">
                     <label class="checkbox task__checkbox">
