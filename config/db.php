@@ -1,4 +1,4 @@
-
+<?php
 $db = [
     'root' => 'localhost',
     'user' => 'root',
