@@ -35,3 +35,23 @@ function get_diff_time($task_time)
         return 'task--important';
     }
 }
+
+/**
+ * устанавливает соеденение и получает данные из БД,
+ * в случае ошибки соеденеия возращает ошибку и показывает её на экране.
+ *
+ * @param array $con принимает ресурс соеденения
+ * @param string $sql принимает SQL запрос к получению информации из БД
+ * @return array возвращает результаты обращения к БД ввиде двумерного массива
+ */
+
+function get_mysql_selection_result($con, $sql)
+{
+    $result = mysqli_query($con, $sql);
+    if (!$result) {
+        $error = mysqli_error($con);
+        print ("Ошибка MySQL: " . $error);
+    } else {
+        return mysqli_fetch_all($result, MYSQLI_ASSOC);
+    }
+}
