@@ -23,16 +23,16 @@
 </div>
 
 <table class="tasks">
-    <?php foreach ($tasks as $key => $value): ?>
+    <?php foreach ($tasks as $key => $task): ?>
         <!--  покажет(пока рандомно) не выполненые  задачи если show_complete_tasks==0  -->
-        <?php if ($show_complete_tasks === 0 && $value['done'] === 0): ?>
+        <?php if ($show_complete_tasks === 0 && $task['done'] === '0'): ?>
 <!--            Функция для получения кол-ва задач в категории проекты-->
-            <tr class="tasks__item task <?= get_diff_time($value['date_of_completion']) ?> <?= ($value['done'] === 1) ? "task--completed" : "" ?>">
+            <tr class="tasks__item task <?= get_diff_time($task['date_of_completion']) ?> <?= ($task['done'] === '1') ? "task--completed" : "" ?>">
                 <td class="task__select">
                     <label class="checkbox task__checkbox">
                         <input class="checkbox__input visually-hidden task__checkbox" type="checkbox"
                                value="1">
-                        <span class="checkbox__text"><?= htmlspecialchars($value['task']) ?></span>
+                        <span class="checkbox__text"><?= htmlspecialchars($task['task']) ?></span>
                     </label>
                 </td>
 
@@ -40,20 +40,20 @@
                     <a class="download-link" href="#"><?= htmlspecialchars("Home.psd") ?></a>
                 </td>
 
-                <td class="task__date"><?= htmlspecialchars($value['date_of_completion']) ?></td>
+                <td class="task__date"><?= htmlspecialchars($task['date_of_completion'])?></td>
             </tr>
         <?php endif; ?>
 
         <!--  покажет(пока рандомно) выполненые  задачи если show_complete_tasks==1
          и добавит в разметку класс task--completed  этот кусок кода я добавил, чтобы проверить
          отработает этот класс или нет-->
-        <?php if ($show_complete_tasks === 1 && $value['done'] === 1): ?>
-            <tr class="tasks__item task <?= ($value['done'] === 1) ? "task--completed" : "" ?>">
+        <?php if ($show_complete_tasks === 1 && $task['done'] === '1'): ?>
+            <tr class="tasks__item task <?= ($task['done'] === '1') ? "task--completed" : "" ?>">
                 <td class="task__select">
                     <label class="checkbox task__checkbox">
                         <input class="checkbox__input visually-hidden task__checkbox" type="checkbox"
                                value="1">
-                        <span class="checkbox__text"><?= htmlspecialchars($value['task']) ?></span>
+                        <span class="checkbox__text"><?= htmlspecialchars($task['task']) ?></span>
                     </label>
                 </td>
 
@@ -61,7 +61,7 @@
                     <a class="download-link" href="#"><?= htmlspecialchars("Home.psd") ?></a>
                 </td>
 
-                <td class="task__date"><?= htmlspecialchars($value['date_of_completion']) ?></td>
+                <td class="task__date"><?= htmlspecialchars($task['date_of_completion']) ?></td>
             </tr>
         <?php endif; ?>
 
